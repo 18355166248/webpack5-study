@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "lib": ["esnext", "DOM"],
+    // 控制是否生成编译后的输出文件。当设置为 true 时，TypeScript 只进行类型检查而不生成任何输出文件。
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleResolution": "NodeNext",
+    // 控制是否允许在导入语句中显式使用 .ts、.tsx 和 .d.ts 文件扩展名。
+    "allowImportingTsExtensions": true
+  }
+}
