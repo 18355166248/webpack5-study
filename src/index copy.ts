@@ -1,4 +1,6 @@
 import "./assets/css/common.css";
+import "./assets/scss/common.scss";
+import "./assets/scss/b.scss";
 import { isFunction } from "./utils/base";
 
 class Dog {
