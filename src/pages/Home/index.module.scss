@@ -1,4 +1,18 @@
+@import "./index.scss";
+
 .home {
   background-color: green;
   color: pink;
+  height: 100px;
+}
+
+.home1 {
+  color: red;
+}
+
+:global(.global-class) {
+  background-color: aqua;
+  color: black;
+  height: 100px;
+  font-size: 12px;
 }
