@@ -98,9 +98,6 @@ module.exports = function () {
             {
               loader: "postcss-loader",
               options: {
-                postcssOptions: {
-                  plugins: [require("autoprefixer"), require("cssnano")],
-                },
                 sourceMap: true,
               },
             },
