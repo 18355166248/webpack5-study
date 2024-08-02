@@ -26,6 +26,15 @@ module.exports = function () {
     module: {
       rules: [
         {
+          test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+          type: "asset",
+          parser: {
+            dataUrlCondition: {
+              maxSize: 10_000,
+            },
+          },
+        },
+        {
           // Handle node_modules packages that contain sourcemaps
           enforce: "pre",
           exclude: /@babel(?:\/|\\{1,2})runtime/,
