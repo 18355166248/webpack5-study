@@ -10,6 +10,7 @@ module.exports = function () {
   const isEnvProduction = process.env.NODE_ENV === "production";
 
   return {
+    profile: true,
     mode: isEnvProduction ? "production" : "development",
     devtool: isEnvProduction
       ? "nosources-source-map"
@@ -139,5 +140,9 @@ module.exports = function () {
           // chunkFilename: () => `${count++}.css`,
         }),
     ].filter(Boolean),
+    devServer: {
+      // 这个配置确保了当服务器接收到未知请求时，它会返回应用程序的 index.html 文件，从而使 React Router 能够处理路由。
+      historyApiFallback: true,
+    },
   };
 };

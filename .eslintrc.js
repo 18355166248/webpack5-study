@@ -19,7 +19,7 @@ module.exports = {
   ],
   plugins: ["@typescript-eslint"],
   rules: {
-    "no-console": "warn",
+    "no-console": "off",
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/no-explicit-any": "off", // 禁用 no-explicit-any 规则
   },

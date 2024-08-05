@@ -1,5 +1,6 @@
 const config = {
   plugins: [
+    require("tailwindcss"),
     require("autoprefixer"),
     require("cssnano"),
     // require("postcss-modules")({
