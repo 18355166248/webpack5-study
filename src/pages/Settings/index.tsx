@@ -3,6 +3,7 @@ import * as styles from "./index.module.scss";
 import { Button, message } from "antd";
 import { useLocation, useNavigate } from "react-router-dom";
 import cn from "classnames";
+import { isFunction } from "../../utils/base";
 
 interface SettingsProps {}
 
@@ -15,7 +16,7 @@ const Settings: FC<SettingsProps> = () => {
     navigate(-1);
   }
   function setting() {
-    message.success("设置成功");
+    isFunction(message.success) && message.success("设置成功");
   }
   return (
     <div className={cn(styles.settings, "mt-10 pl-10")}>

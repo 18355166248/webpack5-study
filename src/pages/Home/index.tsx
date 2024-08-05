@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import * as styles from "./index.module.scss";
 import { Button } from "antd";
+import { isFunction } from "../../utils/base";
 
 const Home = () => {
   const navigate = useNavigate();
 
   function goSettings() {
-    navigate("/settings");
+    isFunction(navigate) && navigate("/settings");
   }
 
   return (

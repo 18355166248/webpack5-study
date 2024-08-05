@@ -4,10 +4,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { joinPath } = require("./utils");
 const getCSSModuleLocalIdent = require("./getCSSModuleLocalIdent");
+const StatoscopeWebpackPlugin = require("@statoscope/webpack-plugin").default;
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = function () {
   const isEnvDevelopment = process.env.NODE_ENV === "development";
   const isEnvProduction = process.env.NODE_ENV === "production";
+  const isStatoscope = process.env.STATOSCOPE === "true";
+  const isAnalyzer = process.env.ANALYZER === "true";
 
   return {
     profile: true,
@@ -139,7 +144,31 @@ module.exports = function () {
           // filename: () => `${count++}.css`,
           // chunkFilename: () => `${count++}.css`,
         }),
+      // 性能分析 start
+      isStatoscope && new StatoscopeWebpackPlugin(),
+      isAnalyzer && new BundleAnalyzerPlugin(),
+      // 性能分析 end
     ].filter(Boolean),
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          default: {
+            idHint: "",
+            reuseExistingChunk: true,
+            minChunks: 2,
+            priority: -20,
+          },
+          defaultVendors: {
+            idHint: "vendors",
+            reuseExistingChunk: true,
+            test: /[\\/]node_modules[\\/]/i,
+            priority: -10,
+          },
+        },
+      },
+      minimize: isEnvProduction,
+    },
+
     devServer: {
       // 这个配置确保了当服务器接收到未知请求时，它会返回应用程序的 index.html 文件，从而使 React Router 能够处理路由。
       historyApiFallback: true,
