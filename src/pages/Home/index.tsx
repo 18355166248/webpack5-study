@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={styles.home}>首页6</div>
+      <div className={styles.home}>首页</div>
       <div className="global-class">global-class</div>
       <div className={styles.home222}>home222</div>
       <div className="mt-10">
