@@ -18,6 +18,7 @@ jest.mock("antd", () => ({
 
 describe("Settings test", () => {
   test("Settings render snap", () => {
+    1;
     const { baseElement } = render(<Settings />);
     expect(baseElement).toMatchSnapshot();
   });
@@ -25,7 +26,7 @@ describe("Settings test", () => {
     render(<Settings />);
 
     const placeholderInput = screen.getByPlaceholderText(
-      "a query by placeholder t"
+      "a query by placeholder t1"
     );
     expect(placeholderInput).toBeInTheDocument();
   });

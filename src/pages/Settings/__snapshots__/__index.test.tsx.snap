@@ -11,7 +11,7 @@ exports[`Settings test Settings render snap 1`] = `
       >
         <input
           class="ant-input css-dev-only-do-not-override-d2lrxs ant-input-outlined"
-          placeholder="a query by placeholder t"
+          placeholder="a query by placeholder t1"
           type="text"
           value=""
         />

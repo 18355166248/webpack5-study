@@ -9,7 +9,9 @@
     "build": "NODE_ENV=production webpack --config ./config/webpack.config.js",
     "perf:statoscope": "NODE_ENV=production STATOSCOPE=true webpack --config ./config/webpack.config.js",
     "perf:analyzer": "NODE_ENV=production ANALYZER=true webpack --config ./config/webpack.config.js",
-    "test": "jest"
+    "test": "jest",
+    "test:updateSnap": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage"
   },
   "type": "commonjs",
   "keywords": [],
