@@ -19,7 +19,7 @@ const Settings: FC<SettingsProps> = () => {
   return (
     <div className={cn(styles.settings, "mt-10 pl-10")}>
       <div className="mb-10">
-        <Input placeholder="a query by placeholder" />
+        <Input placeholder="a query by placeholder t" />
       </div>
       <div className="mb-10">
         <Button onClick={back}>返回</Button>

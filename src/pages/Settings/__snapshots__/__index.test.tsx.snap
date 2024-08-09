@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings test Settings render snap 1`] = `
+<body>
+  <div>
+    <div
+      class="mt-10 pl-10"
+    >
+      <div
+        class="mb-10"
+      >
+        <input
+          class="ant-input css-dev-only-do-not-override-d2lrxs ant-input-outlined"
+          placeholder="a query by placeholder t"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="mb-10"
+      >
+        <button
+          class="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default"
+          type="button"
+        >
+          <span>
+            返 回
+          </span>
+        </button>
+      </div>
+      <div>
+        <button
+          class="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-primary"
+          type="button"
+        >
+          <span>
+            设 置
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
