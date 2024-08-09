@@ -57,6 +57,6 @@ describe("Settings test", () => {
 
     expect(message.success).toHaveBeenCalled();
     expect(message.success).toHaveBeenCalledTimes(1);
-    expect(message.success).toHaveBeenCalledWith("设置成");
+    expect(message.success).toHaveBeenCalledWith("设置成功");
   });
 });
