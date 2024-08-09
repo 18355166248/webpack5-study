@@ -15,14 +15,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8
       - name: Run install
-        run: npm install
+        run: pnpm install
         # working-directory: ../ # 如果 package.json 不在仓库根目录，请指定相对路径
       - name: Run Jest coverage
-        run: npm run test:coverage
+        run: pnpm run test:coverage
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Run test
-        run: npm run test
+        run: pnpm run test
