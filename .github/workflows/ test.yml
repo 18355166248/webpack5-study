@@ -11,11 +11,13 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Run install
         run: npm install
+        working-directory: ../../ # 如果 package.json 不在仓库根目录，请指定相对路径
       - name: Run Jest coverage
         run: npm run test:coverage
       - name: Upload coverage reports to Codecov
